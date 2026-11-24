@@ -1,0 +1,2 @@
+lookback_start,formation_date,perf_start,perf_end,first_obs,last_obs,n_obs,source,adjustment,disclaimer
+2024-08-01,2026-07-31,2026-08-01,2026-10-30,2024-08-01,2026-10-30,558,Yahoo Finance (yfinance),Adjusted close (dividends/splits),HISTORICAL SIMULATION / BACKTEST: Portfolio formation uses only information available on or before 31 Jul 2026. Performance window: 01 Aug 2026 to 30 Oct 2026. Not investment advice.

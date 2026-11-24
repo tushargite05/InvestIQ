@@ -9,6 +9,7 @@ suppressPackageStartupMessages({
   library(ggplot2)
 })
 
+# Data paths: local project layout OR cloud (app/data flat CSVs for Posit Connect / shinyapps)
 PROJECT_ROOT <- NULL
 candidates <- c(
   normalizePath("..", mustWork = FALSE),
@@ -21,13 +22,32 @@ for (cnd in candidates) {
     break
   }
 }
-if (is.null(PROJECT_ROOT)) {
-  stop("Cannot find InvestIQ data/processed. Run scripts/run_all.R first.")
-}
 
-PROC <- file.path(PROJECT_ROOT, "data", "processed")
-MET  <- file.path(PROJECT_ROOT, "output", "metrics")
-TAB  <- file.path(PROJECT_ROOT, "output", "tables")
+if (!is.null(PROJECT_ROOT)) {
+  PROC <- file.path(PROJECT_ROOT, "data", "processed")
+  MET  <- file.path(PROJECT_ROOT, "output", "metrics")
+  TAB  <- file.path(PROJECT_ROOT, "output", "tables")
+} else {
+  # Hosted mode: CSVs live next to app.R in app/data/
+  app_data_candidates <- c(
+    file.path(getwd(), "data"),
+    "data",
+    file.path(dirname(normalizePath("app.R", mustWork = FALSE)), "data")
+  )
+  APP_DATA <- NULL
+  for (d in app_data_candidates) {
+    if (file.exists(file.path(d, "performance_metrics.csv"))) {
+      APP_DATA <- normalizePath(d)
+      break
+    }
+  }
+  if (is.null(APP_DATA)) {
+    stop("Cannot find InvestIQ data. For local: run scripts/run_all.R. For cloud: include app/data/*.csv")
+  }
+  PROC <- APP_DATA
+  MET  <- APP_DATA
+  TAB  <- APP_DATA
+}
 
 read_csv_safe <- function(path) {
   if (!file.exists(path)) return(NULL)

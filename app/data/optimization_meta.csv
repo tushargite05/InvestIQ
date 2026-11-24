@@ -1,0 +1,2 @@
+"objective","estimation_start","estimation_end","rf_annual","min_weight","max_weight","long_only","transaction_costs","rebalancing","n_simulations","opt_sharpe_est","equal_sharpe_est","note"
+"Maximize Sharpe (mu-rf)/sigma using estimation-window moments",2024-08-02,2026-07-31,0.065,0.05,0.3,TRUE,"Assumed 0 for simulation; discuss in report","Buy-and-hold over performance window (no intra-window rebalance)",20000,-0.711704004836416,-1.13691473572566,"Optimized weights are estimation-sensitive; not uniquely correct."
