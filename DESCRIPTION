@@ -1,0 +1,24 @@
+Package: InvestIQ
+Title: Smart Equity Portfolio Analytics & Optimization Platform
+Version: 0.1.0
+Authors@R: person("Sarthak", "Bhagawatkar", role = c("aut", "cre"), email = "sarthak@example.com")
+Description: From value stock screening to portfolio optimization, performance attribution and risk analytics for an SBUP Financial Analytics practical assignment. Historical simulation for Aug-Oct 2026.
+License: MIT + file LICENSE
+Depends: R (>= 4.3.0)
+Imports:
+    shiny,
+    bslib,
+    dplyr,
+    DT,
+    plotly,
+    quantmod,
+    PerformanceAnalytics,
+    xts,
+    zoo,
+    TTR,
+    openxlsx,
+    scales,
+    htmltools,
+    ggplot2,
+    readr
+Encoding: UTF-8

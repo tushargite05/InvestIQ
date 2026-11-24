@@ -1,0 +1,3 @@
+"portfolio","window","method","confidence","horizon","var","es","var_perf_window","es_perf_window","note"
+"Equal Weight","estimation (<= formation)","Historical",0.95,"1-day",-0.0128991076601983,-0.0175470646827666,-0.0145926430796932,-0.0172365036590945,"Prefer estimation-window VaR/ES; 3-month window is statistically weak."
+"Max Sharpe Optimized","estimation (<= formation)","Historical",0.95,"1-day",-0.0124290407943535,-0.0175308713810634,-0.0135723170204617,-0.016681150192377,"Prefer estimation-window VaR/ES; 3-month window is statistically weak."
